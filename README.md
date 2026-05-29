@@ -1,4 +1,4 @@
-# 🌌 NicoMosty's Dynamic Dotfiles
+# Dotfiles
 
 A highly customized, fully keyboard-driven, and dynamically themed tiled desktop environment built on **Niri**, **Waybar**, **Sofi/Rofi**, and **SwayNC**. 
 
