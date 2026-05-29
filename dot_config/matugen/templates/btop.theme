@@ -1,0 +1,81 @@
+# Btop Matugen Theme
+# Generated dynamically by Matugen
+
+# Main background, empty for terminal default, or hex code
+theme[main_bg]="{{colors.surface.default.hex}}"
+
+# Main text color
+theme[main_fg]="{{colors.on_surface.default.hex}}"
+
+# Title text color
+theme[title]="{{colors.primary.default.hex}}"
+
+# Highlight keyboard hotkeys text color
+theme[hi_fg]="{{colors.secondary.default.hex}}"
+
+# Background color of selected item in processes box
+theme[selected_bg]="{{colors.surface_container_high.default.hex}}"
+
+# Foreground color of selected item in processes box
+theme[selected_fg]="{{colors.primary.default.hex}}"
+
+# Color of inactive/disabled text
+theme[inactive_fg]="{{colors.outline.default.hex}}"
+
+# Color of text handles, e.g. [h] [p] [y]
+theme[graph_text]="{{colors.on_surface_variant.default.hex}}"
+
+# Background color of all boxes
+theme[div_line]="{{colors.outline.default.hex}}"
+
+# Foreground color of active box border
+theme[active_border]="{{colors.primary.default.hex}}"
+
+# Foreground color of inactive box border
+theme[inactive_border]="{{colors.outline.default.hex}}"
+
+# Theme label right and left border colors
+theme[theme_border]="{{colors.outline.default.hex}}"
+
+# Box title text color
+theme[box_title]="{{colors.primary.default.hex}}"
+
+# Sidebar background color
+theme[sidebar_bg]="{{colors.surface_container.default.hex}}"
+
+# Sidebar foreground color
+theme[sidebar_fg]="{{colors.on_surface.default.hex}}"
+
+# Battery graph colors
+theme[battery_el]="{{colors.primary.default.hex}}"
+theme[battery_gp]="{{colors.secondary.default.hex}}"
+
+# Temperature graph colors
+theme[temp_start]="{{colors.secondary.default.hex}}"
+theme[temp_mid]="{{colors.primary.default.hex}}"
+theme[temp_end]="{{colors.error.default.hex}}"
+
+# CPU graph colors
+theme[cpu_start]="{{colors.primary.default.hex}}"
+theme[cpu_mid]="{{colors.secondary.default.hex}}"
+theme[cpu_end]="{{colors.error.default.hex}}"
+
+# Mem graph colors
+theme[free_start]="{{colors.secondary.default.hex}}"
+theme[free_mid]="{{colors.primary.default.hex}}"
+theme[free_end]="{{colors.error.default.hex}}"
+
+# Cached graph colors
+theme[cached_start]="{{colors.tertiary.default.hex}}"
+theme[cached_mid]="{{colors.secondary.default.hex}}"
+theme[cached_end]="{{colors.error.default.hex}}"
+
+# Used graph colors
+theme[used_start]="{{colors.secondary.default.hex}}"
+theme[used_mid]="{{colors.primary.default.hex}}"
+theme[used_end]="{{colors.error.default.hex}}"
+
+# Available graph colors
+theme[available_start]="{{colors.primary.default.hex}}"
+theme[available_mid]="{{colors.secondary.default.hex}}"
+theme[available_end]="{{colors.error.default.hex}}"

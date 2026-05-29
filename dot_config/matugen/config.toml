@@ -42,5 +42,10 @@ post_hook = 'killall -USR1 kitty || true'
 input_path = '/home/nicomosty/.config/matugen/templates/neovim.lua'
 output_path = '/home/nicomosty/.config/nvim/lua/config/matugen.lua'
 
+[templates.btop]
+input_path = '/home/nicomosty/.config/matugen/templates/btop.theme'
+output_path = '/home/nicomosty/.config/btop/themes/matugen.theme'
+
+
 
 
