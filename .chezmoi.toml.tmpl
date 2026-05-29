@@ -1,0 +1,13 @@
+# Chezmoi Configuration Template
+# This file is version-controlled in Git and automatically generates 
+# your local ~/.config/chezmoi/chezmoi.toml when running 'chezmoi init'.
+
+[data]
+    {{- if eq .chezmoi.hostname "LenovoLaptop" }}
+    device = "Laptop"
+    {{- else if eq .chezmoi.hostname "c-asrockdesktop" }}
+    device = "UltraWide"
+    {{- else }}
+    # Prompt the user for the device type if initialized on a new host
+    device = {{ promptString "device" | quote }}
+    {{- end }}
