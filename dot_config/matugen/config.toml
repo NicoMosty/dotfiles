@@ -38,5 +38,9 @@ input_path = '/home/nicomosty/.config/matugen/templates/kitty-theme.conf'
 output_path = '/home/nicomosty/.config/kitty/current_theme.conf'
 post_hook = 'killall -USR1 kitty || true'
 
+[templates.neovim]
+input_path = '/home/nicomosty/.config/matugen/templates/neovim.lua'
+output_path = '/home/nicomosty/.config/nvim/lua/config/matugen.lua'
+
 
 
