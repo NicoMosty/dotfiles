@@ -1,0 +1,44 @@
+// @import "themes/dracula.rasi"
+@import "themes/waybar-style.rasi"
+
+
+configuration {
+  display-drun: "Applications:";
+  display-window: "Windows:";
+  display-clipboard: "Clipboard:";
+  display-wallpaper: "Wallpapers:";
+
+  drun-display-format: "{icon} {name}";
+  font: "JetBrainsMono Nerd Font Medium 12";
+  
+  // modi: "drun,window,filebrowser";
+  modi: "drun,window,clipboard:/home/nicomosty/Scripts/sh-scripts/rofi/rofi-cliphist-img.sh,wallpaper:/home/nicomosty/Scripts/sh-scripts/rofi/rofi-wallpaper-select.sh";
+  
+  show-icons: true;
+  icon-theme: "Papirus";
+
+  location: 0;
+  sidebar-mode: true;
+
+	/*---------- File browser settings ----------*/
+    filebrowser {
+/*	  directory: "/home";*/
+      directories-first: true;
+      sorting-method:    "name";
+    }
+
+	/*---------- Other settings ----------*/
+    timeout {
+      action: "kb-cancel";
+      delay:  0;
+    }
+}
+
+listview {
+	lines: 3;
+	columns: 3;
+}
+
+window {
+	width: 40%;
+}

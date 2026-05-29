@@ -1,0 +1,22 @@
+// This config is in the KDL format: https://kdl.dev
+// "/-" comments out the following node.
+// Check the wiki for a full description of the configuration:
+// https://github.com/YaLTeR/niri/wiki/Configuration:-Introduction
+
+include "config/1_env.kdl"
+include "config/2_input.kdl"
+include "config/3_outputs.kdl"
+include "config/4_layout.kdl"
+include "config/5_autostart.kdl"
+include "config/6_window_rules.kdl"
+include "config/7_animations.kdl"
+
+// ============= BINDS ================
+include "config/binds/general.kdl"
+include "config/binds/apps.kdl"
+include "config/binds/media.kdl"
+include "config/binds/navigation.kdl"
+include "config/binds/system.kdl"
+include "config/binds/workspaces.kdl"
+
+// include "./noctalia.kdl"

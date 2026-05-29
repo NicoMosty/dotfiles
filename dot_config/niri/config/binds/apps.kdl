@@ -1,0 +1,12 @@
+binds {
+    // Suggested binds for running programs: terminal, app launcher, screen locker.
+    Mod+T hotkey-overlay-title="Open a Terminal: kitty" { spawn "kitty"; }
+    Mod+Alt+T hotkey-overlay-title="Open Kitty nvim-terminal" { spawn-sh "kitty nvim -c terminal -u ~/.config/nvim/terminal/init.lua"; }
+
+    Mod+Space hotkey-overlay-title="Run an Application: Rofi" { spawn-sh "rofi -show"; }
+    // Mod+Space hotkey-overlay-title="Run an Application: Hamr" { spawn "hamr" "toggle"; }
+    // Mod+Space hotkey-overlay-title="Run launcher: Vicinae" { spawn "vicinae" "toggle"; }
+
+    Mod+B hotkey-overlay-title="Open a Browser: Firefox" { spawn "firefox"; }
+    Mod+E hotkey-overlay-title="Open a File Manager: Thunar" { spawn "thunar"; }
+}

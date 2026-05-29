@@ -1,0 +1,20 @@
+binds{
+    // XF86Tools hotkey-overlay-title="Open Keyboard Mouse Pointer: wl_kbptr" { spawn "wl-kbptr" "-o" "modes=floating" "-o" "mode_floating.source=detect"; }
+    // XF86Tools hotkey-overlay-title="Toggle Keyboard Mouse Pointer" {
+    // spawn "sh" "-c" "pgrep -x wl-kbptr >/dev/null && pkill -x wl-kbptr || wl-kbptr -o modes=floating -o mode_floating.source=detect &"
+    // }
+    // XF86Tools hotkey-overlay-title="Open Keyboard Mouse Pointer: wl_kbptr" { spawn "wl-kbptr" "-o" "modes=bisect"; }
+
+    // XF86Tools hotkey-overlay-title="Toggle Keyboard Mouse Pointer" {spawn-sh "pgrep -x wl-kbptr >/dev/null && pkill -x wl-kbptr || wl-kbptr &";}
+    Mod+Slash hotkey-overlay-title="Toggle Keyboard Mouse Pointer" {spawn-sh "pgrep -x wl-kbptr >/dev/null && pkill -x wl-kbptr || wl-kbptr &";}
+    Mod+BackSlash hotkey-overlay-title="Toggle Waybar" { spawn-sh "pgrep waybar && pkill waybar || setsid waybar"; }
+    Mod+Alt+L hotkey-overlay-title="Lock the Screen: swaylock" { spawn "swaylock"; }
+
+    // Open/close the Overview: a zoomed-out view of workspaces and windows.
+    // You can also move the mouse into the top-left hot corner,
+    // or do a four-finger swipe up on a touchpad.
+    // Mod+Tab repeat=false { toggle-overview; }
+    Mod+Tab repeat=false {
+      spawn-sh "niri msg action toggle-overview; pgrep waybar && pkill waybar || setsid waybar;";
+    }
+}

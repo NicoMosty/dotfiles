@@ -1,0 +1,151 @@
+@define-color bg {{colors.surface_container_lowest.default.hex}};
+@define-color bg-light {{colors.surface_container.default.hex}};
+@define-color selected {{colors.surface_container_highest.default.hex}};
+@define-color border-col {{colors.outline_variant.default.hex}};
+@define-color fg {{colors.on_surface_variant.default.hex}};
+@define-color fg-active {{colors.on_surface.default.hex}};
+@define-color accent {{colors.primary.default.hex}};
+@define-color urgent {{colors.error.default.hex}};
+
+/* Standard Global Font */
+* {
+    font-family: "Fira Sans", sans-serif;
+    font-size: 13px;
+    background-clip: padding-box;
+}
+
+/* Minimalist Notification Popup Row */
+.notification-row {
+    background: transparent;
+    padding: 0;
+    margin: 0;
+}
+
+/* Flat, Simple Notification Bubble Card */
+.notification-row .notification-background {
+    background-color: @bg;
+    border: 1px solid @border-col;
+    border-radius: 10px;
+    padding: 12px;
+    margin: 4px 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2); /* Very soft, flat shadow */
+}
+
+/* Hover state is a simple solid highlight */
+.notification-row .notification-background:hover {
+    background-color: @bg-light;
+    border-color: @accent;
+}
+
+/* Clean text styles */
+.notification-title {
+    color: @fg-active;
+    font-weight: bold;
+    font-size: 13px;
+}
+
+.notification-body {
+    color: @fg;
+    font-size: 12px;
+    margin-top: 2px;
+}
+
+/* Flat, simple Close Button */
+.notification-row .notification-background .close-button {
+    background: transparent;
+    color: @fg;
+    border-radius: 6px;
+    padding: 2px;
+}
+
+.notification-row .notification-background .close-button:hover {
+    background: @urgent;
+    color: @bg;
+}
+
+/* Minimalist Slide-out Control Center */
+.control-center {
+    background-color: @bg;
+    border: 1px solid @border-col;
+    border-radius: 10px;
+    margin: 8px;
+    padding: 16px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+.control-center-headers {
+    color: @accent;
+    font-weight: bold;
+    font-size: 14px;
+    margin-bottom: 8px;
+}
+
+/* Flat Widgets & Buttons */
+.widget-title button {
+    background: @bg-light;
+    color: @fg-active;
+    border: 1px solid @border-col;
+    border-radius: 6px;
+    padding: 6px 12px;
+}
+
+.widget-title button:hover {
+    background: @accent;
+    color: @bg;
+    border-color: @accent;
+}
+
+.widget-dnd {
+    background: @bg-light;
+    border: 1px solid @border-col;
+    border-radius: 8px;
+    padding: 8px;
+    margin: 8px 0;
+}
+
+.widget-dnd > switch {
+    background: @selected;
+    border: 1px solid @border-col;
+    border-radius: 99px;
+}
+
+.widget-dnd > switch:checked {
+    background: @accent;
+    border-color: @accent;
+}
+
+/* Simple MPRIS Player Card */
+.widget-mpris {
+    background: @bg-light;
+    border: 1px solid @border-col;
+    border-radius: 10px;
+    padding: 10px;
+    margin-bottom: 8px;
+}
+
+.widget-mpris-player {
+    color: @accent;
+    font-weight: bold;
+    font-size: 10px;
+}
+
+.widget-mpris-title {
+    font-weight: bold;
+    font-size: 13px;
+    color: @fg-active;
+}
+
+.widget-mpris-subtitle {
+    font-size: 11px;
+    color: @fg;
+}
+
+.widget-mpris-buttons button {
+    background: transparent;
+    color: @fg-active;
+    padding: 4px;
+}
+
+.widget-mpris-buttons button:hover {
+    color: @accent;
+}

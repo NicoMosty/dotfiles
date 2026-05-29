@@ -1,0 +1,48 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+# === Configuration ===
+SAVE_SCREENSHOTS=false        # set true to save screenshots
+SAVE_DIR="$HOME/Pictures/QRs" # directory for saved screenshots
+PLAY_SOUND=true               # set false to disable sound
+SUCCESS_SOUND="message"
+FAIL_SOUND="dialog-warning"
+
+# Temporary file
+TMP=$(mktemp --suffix=.png)
+
+# Ensure cleanup
+trap 'rm -f "$TMP"' EXIT
+
+# Take interactive area screenshot
+if ! grim -g "$(slurp)" "$TMP"; then
+  notify-send "QR Extractor" "Failed to take screenshot"
+  [ "$PLAY_SOUND" = true ] && canberra-gtk-play -i "$FAIL_SOUND" || true
+  exit 1
+fi
+
+# Decode QR code (multiple lines possible)
+QR=$(zbarimg --raw "$TMP" 2>/dev/null || true)
+
+# Handle results
+if [ -n "$QR" ]; then
+  # Copy QR content to clipboard
+  echo "$QR" | wl-copy
+
+  # Send notification
+  notify-send "QR Code Extracted" "$QR"
+
+  # Play success sound
+  [ "$PLAY_SOUND" = true ] && canberra-gtk-play -i "$SUCCESS_SOUND" || true
+
+  # Optionally save screenshot
+  if [ "$SAVE_SCREENSHOTS" = true ]; then
+    mkdir -p "$SAVE_DIR"
+    mv "$TMP" "$SAVE_DIR/QR_$(date +%s).png"
+    # prevent trap from deleting saved file
+    trap - EXIT
+  fi
+else
+  notify-send "QR Extractor" "No QR code found"
+  [ "$PLAY_SOUND" = true ] && canberra-gtk-play -i "$FAIL_SOUND" || true
+fi

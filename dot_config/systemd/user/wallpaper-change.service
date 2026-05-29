@@ -1,0 +1,8 @@
+[Unit]
+Description=Apply new wallpaper and Matugen colors
+After=graphical-session.target
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/systemctl --user restart swaybg.service
+ExecStartPost=/bin/sh -c '/usr/bin/matugen image "$(cat %h/.config/wallpaper-path)" --source-color-index 0'

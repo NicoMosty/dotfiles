@@ -1,0 +1,42 @@
+[config]
+# Default color scheme options
+mode = "dark"
+type = "scheme-tonal-spot"
+
+[templates.waybar]
+input_path = '/home/nicomosty/.config/matugen/templates/waybar.css'
+output_path = '/home/nicomosty/.config/waybar/colors-matugen.css'
+post_hook = 'killall -USR2 waybar'
+
+[templates.rofi]
+input_path = '/home/nicomosty/.config/matugen/templates/rofi.rasi'
+output_path = '/home/nicomosty/.config/rofi/themes/colors-matugen.rasi'
+
+[templates.swaync]
+input_path = '/home/nicomosty/.config/matugen/templates/swaync.css'
+output_path = '/home/nicomosty/.config/swaync/style.css'
+post_hook = 'swaync-client -R && swaync-client -rs || true'
+
+[templates.niri]
+input_path = '/home/nicomosty/.config/matugen/templates/niri-layout.kdl'
+output_path = '/home/nicomosty/.config/niri/config/4_layout.kdl'
+
+[templates.fastfetch]
+input_path = '/home/nicomosty/.config/matugen/templates/fastfetch.jsonc'
+output_path = '/home/nicomosty/.config/fastfetch/config.jsonc'
+
+[templates.gtk3]
+input_path = '/home/nicomosty/.config/matugen/templates/gtk-3.0.css'
+output_path = '/home/nicomosty/.config/gtk-3.0/gtk.css'
+
+[templates.gtk4]
+input_path = '/home/nicomosty/.config/matugen/templates/gtk-4.0.css'
+output_path = '/home/nicomosty/.config/gtk-4.0/gtk.css'
+
+[templates.kitty]
+input_path = '/home/nicomosty/.config/matugen/templates/kitty-theme.conf'
+output_path = '/home/nicomosty/.config/kitty/current_theme.conf'
+post_hook = 'killall -USR1 kitty || true'
+
+
+

@@ -1,0 +1,18 @@
+// Note that running niri as a session supports xdg-desktop-autostart,
+// which may be more convenient to use.
+// See the binds section below for more spawn examples.
+
+// This line starts waybar, a commonly used bar for Wayland compositors.
+// spawn-at-startup "waybar"
+
+// spawn-at-startup "qs" "-c" "noctalia-shell"
+
+spawn-sh-at-startup "systemctl --user start swaybg.service wallpaper-change.path"
+spawn-at-startup "swaync"
+spawn-at-startup "niri-float-sticky"
+spawn-at-startup "wl-paste --watch cliphist store"
+spawn-at-startup "blueman-applet"
+spawn-at-startup "/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1"
+// spawn-sh-at-startup "vicianae server"
+
+spawn-at-startup "gnome-keyring-daemon" "--start" "--components=secrets,ssh,pkcs11"

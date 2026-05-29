@@ -1,0 +1,32 @@
+#!/bin/bash
+# Define the directory to organize. Default to the current directory.
+DIR=${1:-.}
+# Define file type extensions and their corresponding folder names.
+declare -A file_types
+file_types=(
+    ["Documents"]="doc docx pdf txt"
+    ["Images"]="jpg jpeg png gif"
+    ["Videos"]="mp4 avi mov"
+    ["Music"]="mp3 wav flac"
+    ["Archives"]="zip tar gz bz2"
+)
+# Create folders and move files into them based on their extensions.
+for folder in "${!file_types[@]}"; do
+    # Create folder if it doesn't exist
+    mkdir -p "$DIR/$folder"
+    
+    # Get the list of extensions for this folder
+    extensions=${file_types[$folder]}
+    # Move files into the corresponding folder
+    for ext in $extensions; do
+        mv -v "$DIR"/*.$ext "$DIR/$folder" 2>/dev/null
+    done
+done
+# Move all other files to an "Others" folder.
+mkdir -p "$DIR/Others"
+for file in "$DIR"/*; do
+    if [[ -f "$file" ]]; then
+        mv -v "$file" "$DIR/Others" 2>/dev/null
+    fi
+done
+echo "File organization completed."

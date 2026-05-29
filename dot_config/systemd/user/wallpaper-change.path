@@ -1,0 +1,8 @@
+[Unit]
+Description=Monitor wallpaper path file changes
+
+[Path]
+PathChanged=%h/.config/wallpaper-path
+
+[Install]
+WantedBy=graphical-session.target

@@ -1,0 +1,12 @@
+spawn-at-startup "xwayland-satellite"
+
+environment {
+    DISPLAY ":0"
+}
+
+cursor {
+    // xcursor-theme "Qogir-Dark"
+    // xcursor-size 10
+    // hide-when-typing
+    // hide-after-inactive-ms 5000
+}

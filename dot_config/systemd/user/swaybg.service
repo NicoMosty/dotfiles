@@ -1,0 +1,10 @@
+[Unit]
+Description=Swaybg Wallpaper Daemon
+After=graphical-session.target
+
+[Service]
+ExecStart=/bin/sh -c '/usr/bin/swaybg -i "$(cat %h/.config/wallpaper-path)" -m fill'
+Restart=always
+
+[Install]
+WantedBy=graphical-session.target
